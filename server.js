@@ -1,7 +1,7 @@
-const PORT = process.env.PORT || 3001;
+const express = require("express");
 const { animals } = require("./data/animals");
 
-const express = require("express");
+const PORT = process.env.PORT || 3001;
 // instantiate the server
 const app = express();
 
