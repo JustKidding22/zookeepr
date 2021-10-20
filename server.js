@@ -1,3 +1,5 @@
+const apiRoutes = require("./routes/apiRoutes");
+const htmlRoutes = require("./routes/htmlRoutes");
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
@@ -12,6 +14,8 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
+app.use("/api", apiRoutes);
+app.use("/", htmlRoutes);
 
 function filterByQuery(query, animalsArray) {
   let personalityTraitsArray = [];
